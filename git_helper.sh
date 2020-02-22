@@ -1,9 +1,15 @@
 #!/bin/bash 
+##########################################################################
+##  Maintainer: HATEM BEN TAYEB 
+##  This script aim to help git users to template their git commits
+##########################################################################
 
+
+
+# Define different git actions, useful for templating the commit message
 u="UPDATE"
 f="FIX"
 a="ADD"
-
 
 
 GitHost=$(git remote -v |tr "\n" " " | awk '{print $2}' | cut -d'/' -f 3)
@@ -15,7 +21,7 @@ commit_date=$(date +'%Y-%m-%d  %H:%M:%S')
 commit_count=$(git rev-list --all --count)
 
 
-
+# Show informations about current commit before continuing
 echo -e " \
 GitHost     : $GitHost \n \
 RepoName    : $repo_name \n \
@@ -25,6 +31,8 @@ CommitMsg   : $commit_msg \n \
 CommitDate  : $commit_date\n \
 CommitCount : $commit_count "| \
 boxes -d stone
+
+# Ask user permission to continue towards the git flow process 
 
 read -p " Validate (Y/N)? : " ok
 
