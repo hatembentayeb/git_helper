@@ -41,7 +41,7 @@ echo -e " \n"
 if [[ $ok == "y" ]] 
 then 
 
-    git add -A && git commit -m "$u: $commit_msg on $commit_date" && git push origin $branch_name
+    git add -A && git commit -m "$action: $commit_msg on $commit_date" && git push origin $branch_name
     
 else 
 
