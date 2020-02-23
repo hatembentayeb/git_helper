@@ -50,7 +50,7 @@ echo -e " \n"
 if [[ $ok == "y" ]] 
 then 
 
-    git add $files && git commit -m "$action: $commit_msg on $commit_date" && git push origin $branch_name
+    git add $files  && git commit -m "$action: $commit_msg on $commit_date" && git push origin $branch_name
     
 else 
 
